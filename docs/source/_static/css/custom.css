@@ -1,0 +1,143 @@
+@import url("theme.css");
+
+.wy-nav-content-wrap {
+    background-color: #fafafa;
+    margin-left: 250px;
+}
+
+.wy-nav-top {
+    line-height: 35px;
+    padding: 15px;
+}
+
+.wy-nav-top i {
+    padding-right: 15px;
+}
+
+.wy-nav-side, .wy-side-nav-search, .wy-menu-vertical {
+    background-color: #fcfcfc;
+    width: 250px;
+}
+
+.wy-side-scroll {
+    width: 270px;
+}
+
+.wy-side-nav-search>a img.logo {
+    margin: 0;
+}
+
+.wy-menu-vertical a {
+    color: #636363;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #e0e0e0;
+    color: #404040;
+}
+
+.wy-menu-vertical li.current ul a {
+    border-right: none;
+    background-color: #f3f3f3;
+}
+
+.wy-menu-vertical p.caption {
+    height: 42px;
+    padding-top: 15px;
+}
+
+.wy-side-nav-search {
+    background-color: transparent;
+}
+
+.wy-side-nav-search>a {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.toctree-expand {
+    font-size: inherit !important;
+    line-height: 1.35em !important;
+}
+
+.wy-nav-content {
+    background-color: #ffffff;
+    margin: unset;
+    max-width: 1024px;
+}
+
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+    font-size: 0.9em;
+}
+
+div.wy-menu.rst-pro {
+    display: none !important;
+}
+
+footer, footer p {
+    font-size: 14px;
+}
+
+footer .commit {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .wy-nav-side.shift { 
+        width: 50%;
+        left: 0;
+    }
+    .wy-side-scroll {
+        width: auto;
+    }
+    .wy-side-nav-search {
+        width: auto;
+    }
+    .wy-menu.wy-menu-vertical{
+        width: auto;
+    }
+    .wy-nav-content-wrap { 
+        margin-left: 0;
+    }
+    .wy-nav-content-wrap .wy-nav-content { 
+        padding: 1.618em;
+    }
+    .wy-nav-content-wrap.shift { 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wy-nav-side.shift { 
+        width: 75%;
+        left: 0;
+    }
+
+    .wy-nav-content-wrap.shift { 
+        left: 75%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .wy-nav-side.shift { 
+        width: 85%;
+        left: 0;
+    }
+
+    .wy-nav-content-wrap.shift { 
+        left: 85%;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 300px) {
+    .wy-nav-side.shift { 
+        width: 100%;
+        left: 0;
+    }
+
+    .wy-nav-content-wrap.shift { 
+        left: 100%;
+    }
+}

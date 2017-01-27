@@ -1,3 +1,8 @@
+.. toctree::
+   :hidden:
+
+   Hermes Business Messaging Gateway <http://hermes.cecid.org/>
+
 Java API Documentation
 ======================
 
