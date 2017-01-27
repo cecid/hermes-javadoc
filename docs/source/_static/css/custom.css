@@ -1,5 +1,15 @@
 @import url("theme.css");
 
+.wy-body-for-nav {
+    background-image: none;
+}
+
+.wy-grid-for-nav {
+    position: relative;
+    max-width: 1274px;
+    margin: 0 auto;
+}
+
 .wy-nav-content-wrap {
     background-color: #fafafa;
     margin-left: 250px;
@@ -62,10 +72,15 @@
     line-height: 1.35em !important;
 }
 
+.rst-versions {
+    left: unset;
+    width: 250px;
+}
+
 .wy-nav-content {
     background-color: #ffffff;
     margin: unset;
-    max-width: 1024px;
+    max-width: 100%;
 }
 
 .wy-breadcrumbs li.wy-breadcrumbs-aside {
@@ -84,8 +99,15 @@ footer .commit {
     display: none;
 }
 
+@media screen and (min-width:769px) {
+    .wy-nav-side {
+        left: unset;
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .wy-nav-side.shift { 
+    .wy-nav-side.shift,
+    .rst-versions.shift { 
         width: 50%;
         left: 0;
     }
@@ -110,7 +132,8 @@ footer .commit {
 }
 
 @media screen and (max-width: 500px) {
-    .wy-nav-side.shift { 
+    .wy-nav-side.shift,
+    .rst-versions.shift { 
         width: 75%;
         left: 0;
     }
@@ -121,7 +144,8 @@ footer .commit {
 }
 
 @media screen and (max-width: 350px) {
-    .wy-nav-side.shift { 
+    .wy-nav-side.shift,
+    .rst-versions.shift { 
         width: 85%;
         left: 0;
     }
@@ -132,7 +156,8 @@ footer .commit {
 }
 
 @media screen and (min-width: 200px) and (max-width: 300px) {
-    .wy-nav-side.shift { 
+    .wy-nav-side.shift,
+    .rst-versions.shift { 
         width: 100%;
         left: 0;
     }
