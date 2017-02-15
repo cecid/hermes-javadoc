@@ -72,9 +72,9 @@
     line-height: 1.35em !important;
 }
 
-.rst-versions {
-    left: unset;
-    width: 250px;
+.rst-versions,
+.rst-versions.shift {
+    display: none;
 }
 
 .wy-nav-content {
@@ -106,8 +106,7 @@ footer .commit {
 }
 
 @media screen and (max-width: 768px) {
-    .wy-nav-side.shift,
-    .rst-versions.shift { 
+    .wy-nav-side.shift { 
         width: 50%;
         left: 0;
     }
@@ -132,8 +131,7 @@ footer .commit {
 }
 
 @media screen and (max-width: 500px) {
-    .wy-nav-side.shift,
-    .rst-versions.shift { 
+    .wy-nav-side.shift { 
         width: 75%;
         left: 0;
     }
@@ -144,8 +142,7 @@ footer .commit {
 }
 
 @media screen and (max-width: 350px) {
-    .wy-nav-side.shift,
-    .rst-versions.shift { 
+    .wy-nav-side.shift { 
         width: 85%;
         left: 0;
     }
@@ -156,8 +153,7 @@ footer .commit {
 }
 
 @media screen and (min-width: 200px) and (max-width: 300px) {
-    .wy-nav-side.shift,
-    .rst-versions.shift { 
+    .wy-nav-side.shift { 
         width: 100%;
         left: 0;
     }
