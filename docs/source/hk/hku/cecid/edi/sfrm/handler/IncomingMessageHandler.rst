@@ -112,9 +112,7 @@ IncomingMessageHandler
    #. Insertion of data content to specified file for PAYLOAD segment.
    #. RECEIPT Response handling
    #. RECOVERY when data integrity check fails.
-   #.
    #. Error Definition and handling
-   #.
 
    For details, read \ :java:ref:`processIncomingMessage(SFRMMessage,Object[])`\  as the entry point for knowing how this class work. Creation Date: 11/10/2006
 

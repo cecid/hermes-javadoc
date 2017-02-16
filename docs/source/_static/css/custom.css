@@ -1,5 +1,9 @@
 @import url("theme.css");
 
+.wy-menu.wy-menu-vertical > ul:first-child {
+    padding-bottom: 15px;
+}
+
 .wy-body-for-nav {
     background-image: none;
     max-width: 1274px;
