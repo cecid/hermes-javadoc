@@ -2,37 +2,19 @@
 
 .. java:import:: java.net URL
 
-.. java:import:: org.apache.http.client HttpClient
+.. java:import:: org.apache.commons.httpclient HttpClient
 
-.. java:import:: org.apache.http.impl.client CloseableHttpClient
+.. java:import:: org.apache.commons.httpclient HttpMethod
 
-.. java:import:: org.apache.http.impl.client HttpClientBuilder
+.. java:import:: org.apache.commons.httpclient HttpStatus
 
-.. java:import:: org.apache.http.client.methods HttpRequestBase
+.. java:import:: org.apache.commons.httpclient HttpException
 
-.. java:import:: org.apache.http.client.methods HttpPost
+.. java:import:: org.apache.commons.httpclient.methods PostMethod
 
-.. java:import:: org.apache.http.client.methods CloseableHttpResponse
+.. java:import:: org.apache.commons.httpclient.auth AuthScope
 
-.. java:import:: org.apache.http Header
-
-.. java:import:: org.apache.http HttpStatus
-
-.. java:import:: org.apache.http HttpException
-
-.. java:import:: org.apache.http.auth AuthScope
-
-.. java:import:: org.apache.http.auth UsernamePasswordCredentials
-
-.. java:import:: org.apache.http.auth Credentials
-
-.. java:import:: org.apache.http.client CredentialsProvider
-
-.. java:import:: org.apache.http.client.config RequestConfig
-
-.. java:import:: org.apache.http.impl.auth BasicScheme
-
-.. java:import:: org.apache.http.impl.client BasicCredentialsProvider
+.. java:import:: org.apache.commons.httpclient UsernamePasswordCredentials
 
 .. java:import:: hk.hku.cecid.corvus.util FileLogger
 
@@ -57,6 +39,10 @@ log
 
 .. java:field:: protected FileLogger log
    :outertype: HttpSender
+
+   The logger used for log message and exception
+
+   **See also:** :java:ref:`hk.hku.cecid.corvus.util.FileLogger`
 
 properties
 ^^^^^^^^^^
@@ -94,19 +80,6 @@ HttpSender
 HttpSender
 ^^^^^^^^^^
 
-.. java:constructor:: public HttpSender(FileLogger logger, Data d, String username, String password)
-   :outertype: HttpSender
-
-   Explicit Constructor.
-
-   :param logger: The logger used for log message and exception.
-   :param d: The data used for sending HTTP request.
-   :param username: The username for authentication
-   :param password: The password for authentication
-
-HttpSender
-^^^^^^^^^^
-
 .. java:constructor:: public HttpSender(FileLogger l, Data d, String endpoint)
    :outertype: HttpSender
 
@@ -128,46 +101,8 @@ HttpSender
    :param d: The data used for sending HTTP request.
    :param endpoint: The URL of service end point.
 
-HttpSender
-^^^^^^^^^^
-
-.. java:constructor:: public HttpSender(FileLogger l, Data d, String endpoint, String username, String password)
-   :outertype: HttpSender
-
-   Explicit Constructor.
-
-   :param l: The logger used for log message and exception.
-   :param d: The data used for sending HTTP request.
-   :param endpoint: The URL of service end point.
-   :param username: The username for authentication
-   :param password: The password for authentication
-
-HttpSender
-^^^^^^^^^^
-
-.. java:constructor:: public HttpSender(FileLogger l, Data d, URL endpoint, String username, String password)
-   :outertype: HttpSender
-
-   Explicit Constructor.
-
-   :param l: The logger used for log message and exception.
-   :param d: The data used for sending HTTP request.
-   :param endpoint: The URL of service end point.
-   :param username: The username for authentication
-   :param password: The password for authentication
-
 Methods
 -------
-closeResponse
-^^^^^^^^^^^^^
-
-.. java:method:: public void closeResponse(CloseableHttpResponse response)
-   :outertype: HttpSender
-
-   Close http response with exception handling
-
-   :param response: the response to close
-
 getCurrentLoopTimes
 ^^^^^^^^^^^^^^^^^^^
 
@@ -179,7 +114,7 @@ getCurrentLoopTimes
 getExecutedMethod
 ^^^^^^^^^^^^^^^^^
 
-.. java:method:: public HttpRequestBase getExecutedMethod()
+.. java:method:: public HttpMethod getExecutedMethod()
    :outertype: HttpSender
 
    Get the last executed HTTP method.  This method should be invoked during \ :java:ref:`onResponse()`\ .
@@ -193,16 +128,6 @@ getLoopTimes
    :outertype: HttpSender
 
    Get how many times should the sender to be send.
-
-getResponse
-^^^^^^^^^^^
-
-.. java:method:: public CloseableHttpResponse getResponse()
-   :outertype: HttpSender
-
-   Get the response of the last executed HTTP method. This method should be invoked during \ :java:ref:`onResponse()`\ .
-
-   :return: the response of the last executed HTTP method
 
 getServiceEndPoint
 ^^^^^^^^^^^^^^^^^^
@@ -241,7 +166,7 @@ isAuthenticationRequired
 onBeforeRequest
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected void onBeforeRequest(HttpClient client, HttpRequestBase request) throws Exception
+.. java:method:: protected void onBeforeRequest(HttpClient client, HttpMethod request) throws Exception
    :outertype: HttpSender
 
    [@EVENT] This method is invoked just before sending the request to HTTP service end-point.
@@ -253,7 +178,7 @@ onBeforeRequest
 onCreateRequest
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected HttpRequestBase onCreateRequest() throws Exception
+.. java:method:: protected HttpMethod onCreateRequest() throws Exception
    :outertype: HttpSender
 
    [@EVENT] This method is invoked when the sender is required to create a HTTP Request from configuration.  By default, this method return a PostMethod pointing to \ :java:ref:`getServiceEndPoint()`\ .
@@ -311,6 +236,18 @@ run
    :outertype: HttpSender
 
    The thread execution method.
+
+setBasicAuthentication
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public void setBasicAuthentication(String username, String password)
+   :outertype: HttpSender
+
+   Set to use the basic authentication when calling the web service.
+
+   :param username: The user-name for basic authentication.
+   :param password: The password for basic authentication.
+   :throws NullPointerException: When the user-name or password is null.
 
 setLoopTimes
 ^^^^^^^^^^^^

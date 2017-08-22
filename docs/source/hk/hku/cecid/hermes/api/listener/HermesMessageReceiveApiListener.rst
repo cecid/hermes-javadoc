@@ -1,48 +1,12 @@
-.. java:import:: java.io ByteArrayOutputStream
-
-.. java:import:: java.io InputStream
-
 .. java:import:: java.io IOException
 
-.. java:import:: java.util ArrayList
-
 .. java:import:: java.util HashMap
-
-.. java:import:: java.util Iterator
-
-.. java:import:: java.util List
 
 .. java:import:: java.util Map
 
 .. java:import:: javax.servlet.http HttpServletRequest
 
 .. java:import:: javax.xml.soap AttachmentPart
-
-.. java:import:: javax.xml.soap SOAPException
-
-.. java:import:: org.apache.commons.codec.binary Base64
-
-.. java:import:: hk.hku.cecid.ebms.pkg EbxmlMessage
-
-.. java:import:: hk.hku.cecid.ebms.spa EbmsProcessor
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao MessageDAO
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao MessageDVO
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao MessageServerDAO
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao PartnershipDAO
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao PartnershipDVO
-
-.. java:import:: hk.hku.cecid.ebms.spa.handler EbxmlMessageDAOConvertor
-
-.. java:import:: hk.hku.cecid.ebms.spa.handler MessageClassifier
-
-.. java:import:: hk.hku.cecid.ebms.spa.task MessageValidationException
-
-.. java:import:: hk.hku.cecid.piazza.commons.dao DAOException
 
 .. java:import:: hk.hku.cecid.piazza.commons.json JsonParseException
 
@@ -53,6 +17,12 @@
 .. java:import:: hk.hku.cecid.hermes.api Constants
 
 .. java:import:: hk.hku.cecid.hermes.api ErrorCode
+
+.. java:import:: hk.hku.cecid.hermes.api.handler As2ReceiveMessageHandler
+
+.. java:import:: hk.hku.cecid.hermes.api.handler EbmsReceiveMessageHandler
+
+.. java:import:: hk.hku.cecid.hermes.api.handler ReceiveMessageHandler
 
 .. java:import:: hk.hku.cecid.hermes.api.spa ApiPlugin
 
@@ -70,10 +40,18 @@ HermesMessageReceiveApiListener
 
 Fields
 ------
-MAX_NUMBER
-^^^^^^^^^^
+handlers
+^^^^^^^^
 
-.. java:field:: public static int MAX_NUMBER
+.. java:field:: protected Map<String, ReceiveMessageHandler> handlers
+   :outertype: HermesMessageReceiveApiListener
+
+Constructors
+------------
+HermesMessageReceiveApiListener
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:constructor:: public HermesMessageReceiveApiListener()
    :outertype: HermesMessageReceiveApiListener
 
 Methods

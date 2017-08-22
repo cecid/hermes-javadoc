@@ -12,6 +12,8 @@
 
 .. java:import:: org.w3c.dom Attr
 
+.. java:import:: org.apache.log4j Logger
+
 DocumentResolver
 ================
 
@@ -33,6 +35,12 @@ docs
    :outertype: DocumentResolver
 
    Internal variable for holding the document parameters.
+
+logger
+^^^^^^
+
+.. java:field:: protected static Logger logger
+   :outertype: DocumentResolver
 
 Constructors
 ------------

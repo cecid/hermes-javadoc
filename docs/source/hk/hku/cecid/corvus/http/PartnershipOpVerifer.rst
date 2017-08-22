@@ -93,8 +93,8 @@ validate
    :param ins: The HTML content to validate the result of partnership operation
    :throws SAXException: ..
 
-     #. When unable to down-load the HTML DTD from the web. Check your Internet connectivity
-     #. When IO related problems occur
-
+   #. When unable to down-load the HTML DTD from the web. Check your Internet connectivity
+   #. When IO related problems occur
+   
    :throws ParserConfigurationException: When SAX parser mis-configures.
 

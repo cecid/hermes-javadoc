@@ -26,23 +26,15 @@
 
 .. java:import:: hk.hku.cecid.piazza.commons.soap WebServicesResponse
 
-.. java:import:: java.util ArrayList
-
 .. java:import:: java.util Iterator
-
-.. java:import:: javax.xml.namespace QName
 
 .. java:import:: javax.xml.soap AttachmentPart
 
-.. java:import:: javax.xml.soap SOAPBodyElement
-
 .. java:import:: javax.xml.soap SOAPElement
 
-.. java:import:: javax.xml.soap SOAPException
-
-.. java:import:: javax.xml.soap SOAPFactory
-
 .. java:import:: javax.xml.soap SOAPMessage
+
+.. java:import:: org.w3c.dom Element
 
 EbmsMessageReceiverService
 ==========================
@@ -52,7 +44,7 @@ EbmsMessageReceiverService
 
 .. java:type:: public class EbmsMessageReceiverService extends WebServicesAdaptor
 
-   AS2MessageReceiverListService
+   EbmsMessageReceiverListService
 
    :author: Donahue Sze
 
@@ -75,6 +67,6 @@ isCacheEnabled
 serviceRequested
 ^^^^^^^^^^^^^^^^
 
-.. java:method:: public void serviceRequested(WebServicesRequest request, WebServicesResponse response) throws SOAPRequestException, DAOException, SOAPException
+.. java:method:: public void serviceRequested(WebServicesRequest request, WebServicesResponse response) throws SOAPRequestException, DAOException
    :outertype: EbmsMessageReceiverService
 

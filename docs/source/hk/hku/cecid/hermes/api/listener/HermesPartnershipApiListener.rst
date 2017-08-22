@@ -2,23 +2,13 @@
 
 .. java:import:: java.util ArrayList
 
-.. java:import:: java.util Base64
-
 .. java:import:: java.util HashMap
 
-.. java:import:: java.util Iterator
+.. java:import:: java.util List
 
 .. java:import:: java.util Map
 
 .. java:import:: javax.servlet.http HttpServletRequest
-
-.. java:import:: hk.hku.cecid.ebms.spa EbmsProcessor
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao PartnershipDAO
-
-.. java:import:: hk.hku.cecid.ebms.spa.dao PartnershipDVO
-
-.. java:import:: hk.hku.cecid.piazza.commons.dao DAOException
 
 .. java:import:: hk.hku.cecid.piazza.commons.json JsonParseException
 
@@ -29,6 +19,12 @@
 .. java:import:: hk.hku.cecid.hermes.api Constants
 
 .. java:import:: hk.hku.cecid.hermes.api ErrorCode
+
+.. java:import:: hk.hku.cecid.hermes.api.handler As2PartnershipHandler
+
+.. java:import:: hk.hku.cecid.hermes.api.handler EbmsPartnershipHandler
+
+.. java:import:: hk.hku.cecid.hermes.api.handler PartnershipHandler
 
 .. java:import:: hk.hku.cecid.hermes.api.spa ApiPlugin
 
@@ -43,6 +39,22 @@ HermesPartnershipApiListener
    HermesPartnershipApiListener
 
    :author: Patrick Yee
+
+Fields
+------
+handlers
+^^^^^^^^
+
+.. java:field:: protected Map<String, PartnershipHandler> handlers
+   :outertype: HermesPartnershipApiListener
+
+Constructors
+------------
+HermesPartnershipApiListener
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:constructor:: public HermesPartnershipApiListener()
+   :outertype: HermesPartnershipApiListener
 
 Methods
 -------

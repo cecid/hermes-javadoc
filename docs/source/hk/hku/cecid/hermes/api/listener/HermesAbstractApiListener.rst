@@ -28,6 +28,10 @@
 
 .. java:import:: hk.hku.cecid.hermes.api Constants
 
+.. java:import:: hk.hku.cecid.hermes.api ErrorCode
+
+.. java:import:: hk.hku.cecid.hermes.api.spa ApiPlugin
+
 HermesAbstractApiListener
 =========================
 
@@ -53,13 +57,13 @@ Methods
 createActionResult
 ^^^^^^^^^^^^^^^^^^
 
-.. java:method:: protected Map<String, Object> createActionResult(String id, boolean success)
+.. java:method:: public Map<String, Object> createActionResult(String id, boolean success)
    :outertype: HermesAbstractApiListener
 
 createError
 ^^^^^^^^^^^
 
-.. java:method:: protected Map<String, Object> createError(int code, String message)
+.. java:method:: public Map<String, Object> createError(int code, String message)
    :outertype: HermesAbstractApiListener
 
 fillDate
@@ -68,10 +72,58 @@ fillDate
 .. java:method:: protected void fillDate(Map<String, Object> dictionary)
    :outertype: HermesAbstractApiListener
 
+fillError
+^^^^^^^^^
+
+.. java:method:: public void fillError(Map<String, Object> error, int code, String message)
+   :outertype: HermesAbstractApiListener
+
 getDictionaryFromRequest
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. java:method:: protected Map<String, Object> getDictionaryFromRequest(HttpServletRequest request) throws IOException, JsonParseException
+   :outertype: HermesAbstractApiListener
+
+getLongFromInput
+^^^^^^^^^^^^^^^^
+
+.. java:method:: public Long getLongFromInput(Map<String, Object> inputDict, String key, Map<String, Object> error)
+   :outertype: HermesAbstractApiListener
+
+getOptionalBooleanFromInput
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public Boolean getOptionalBooleanFromInput(Map<String, Object> inputDict, String key, boolean defaultValue, Map<String, Object> error)
+   :outertype: HermesAbstractApiListener
+
+getOptionalLongFromInput
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public Long getOptionalLongFromInput(Map<String, Object> inputDict, String key, long defaultValue, Map<String, Object> error)
+   :outertype: HermesAbstractApiListener
+
+getOptionalStringFromInput
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public String getOptionalStringFromInput(Map<String, Object> inputDict, String key, String defaultValue, Map<String, Object> error)
+   :outertype: HermesAbstractApiListener
+
+getStringFromInput
+^^^^^^^^^^^^^^^^^^
+
+.. java:method:: public String getStringFromInput(Map<String, Object> inputDict, String key, Map<String, Object> error)
+   :outertype: HermesAbstractApiListener
+
+logError
+^^^^^^^^
+
+.. java:method:: protected void logError(String message, Throwable e)
+   :outertype: HermesAbstractApiListener
+
+logError
+^^^^^^^^
+
+.. java:method:: protected void logError(String message)
    :outertype: HermesAbstractApiListener
 
 processApi

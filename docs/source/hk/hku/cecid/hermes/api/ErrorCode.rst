@@ -68,6 +68,12 @@ ERROR_UNKNOWN
 .. java:field:: public static final int ERROR_UNKNOWN
    :outertype: ErrorCode
 
+ERROR_UNKNOWN_ACTION
+^^^^^^^^^^^^^^^^^^^^
+
+.. java:field:: public static final int ERROR_UNKNOWN_ACTION
+   :outertype: ErrorCode
+
 ERROR_WRITING_DATABASE
 ^^^^^^^^^^^^^^^^^^^^^^
 

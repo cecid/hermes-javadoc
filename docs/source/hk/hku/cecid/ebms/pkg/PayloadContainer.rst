@@ -18,17 +18,21 @@ PayloadContainer
 
    A Payload Container contains an ebXML MIME header as well as application payload, as illustrated in the following diagram:
 
-   .. code-block:: xml
-      :linenos:
+   1. Content-ID:
 
-      Content-ID:
-      Content-type: application/xml
-       
-      <PurchaseOrder>
-        <Product>...</Product>
-        ...
-      </PurchaseOrder>
-      <!--Line 1-2: ebXML MIME headers. Line 4-7: Application payload-->
+   #. Content-type: application/xml
+
+   #. 
+
+   #. <PurchaseOrder>
+
+   #.  <Product>...</Product>
+
+   #.  ...
+   
+   #. </PurchaseOrder>
+
+   Line 1-2: ebXML MIME headers. Line 4-7: Application payload
 
    This class encapsulates the structure of payload container in an ebXML message.
 

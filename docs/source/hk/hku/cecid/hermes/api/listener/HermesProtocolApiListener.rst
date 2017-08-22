@@ -1,5 +1,7 @@
 .. java:import:: java.util ArrayList
 
+.. java:import:: java.util List
+
 HermesProtocolApiListener
 =========================
 
@@ -17,13 +19,13 @@ Methods
 parseFromPathInfo
 ^^^^^^^^^^^^^^^^^
 
-.. java:method:: protected ArrayList<String> parseFromPathInfo(String pathInfo)
+.. java:method:: protected List<String> parseFromPathInfo(String pathInfo)
    :outertype: HermesProtocolApiListener
 
 parseFromPathInfo
 ^^^^^^^^^^^^^^^^^
 
-.. java:method:: protected ArrayList<String> parseFromPathInfo(String pathInfo, int numActionParts)
+.. java:method:: protected List<String> parseFromPathInfo(String pathInfo, int numActionParts)
    :outertype: HermesProtocolApiListener
 
    Returns a list of three strings: [ action, protocol, parameter ]

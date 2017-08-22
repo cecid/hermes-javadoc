@@ -10,7 +10,9 @@ hk.hku.cecid.hermes.api.listener
    HermesAbstractApiListenerTest
    HermesApiListener
    HermesApiListenerTest
+   HermesMessageHistoryApiListener
    HermesMessageReceiveApiListener
+   HermesMessageRedownloadApiListener
    HermesMessageSendApiListener
    HermesPartnershipApiListener
    HermesProtocolApiListener

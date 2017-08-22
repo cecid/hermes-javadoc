@@ -12,25 +12,9 @@
 
 .. java:import:: java.util HashMap
 
-.. java:import:: java.util ArrayList
+.. java:import:: org.apache.commons.httpclient HttpMethod
 
-.. java:import:: org.apache.http.client.methods HttpRequestBase
-
-.. java:import:: org.apache.http.client.methods HttpPost
-
-.. java:import:: org.apache.http HttpEntity
-
-.. java:import:: org.apache.http NameValuePair
-
-.. java:import:: org.apache.http.message BasicNameValuePair
-
-.. java:import:: org.apache.http.client.entity UrlEncodedFormEntity
-
-.. java:import:: org.apache.http.client.utils URLEncodedUtils
-
-.. java:import:: hk.hku.cecid.corvus.util FileLogger
-
-.. java:import:: hk.hku.cecid.corvus.ws.data KVPairData
+.. java:import:: org.apache.commons.httpclient.methods PostMethod
 
 .. java:import:: hk.hku.cecid.corvus.util FileLogger
 
@@ -117,6 +101,6 @@ main
 onCreateRequest
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected HttpRequestBase onCreateRequest() throws Exception
+.. java:method:: protected HttpMethod onCreateRequest() throws Exception
    :outertype: AS2EnvelopQuerySender
 

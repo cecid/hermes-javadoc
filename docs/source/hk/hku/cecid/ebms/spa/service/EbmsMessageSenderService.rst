@@ -46,6 +46,8 @@
 
 .. java:import:: javax.xml.soap SOAPMessage
 
+.. java:import:: org.w3c.dom Element
+
 EbmsMessageSenderService
 ========================
 

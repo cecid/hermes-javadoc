@@ -2,10 +2,6 @@
 
 .. java:import:: java.util Map
 
-.. java:import:: java.util List
-
-.. java:import:: java.util ArrayList
-
 .. java:import:: java.io InputStream
 
 .. java:import:: java.io ByteArrayInputStream
@@ -22,17 +18,9 @@
 
 .. java:import:: java.nio.channels Channels
 
-.. java:import:: org.apache.http.client.methods HttpRequestBase
+.. java:import:: org.apache.commons.httpclient HttpMethod
 
-.. java:import:: org.apache.http.client.methods HttpPost
-
-.. java:import:: org.apache.http.client.methods CloseableHttpResponse
-
-.. java:import:: org.apache.http NameValuePair
-
-.. java:import:: org.apache.http.message BasicNameValuePair
-
-.. java:import:: org.apache.http.client.entity UrlEncodedFormEntity
+.. java:import:: org.apache.commons.httpclient.methods PostMethod
 
 .. java:import:: hk.hku.cecid.corvus.util FileLogger
 
@@ -101,19 +89,6 @@ EnvelopQuerySender
    :param logger: The logger for log the sending process.
    :param d: The data used for generate Envelop query request. It must be a kind of Admin data.
 
-EnvelopQuerySender
-^^^^^^^^^^^^^^^^^^
-
-.. java:constructor:: protected EnvelopQuerySender(FileLogger logger, Data d, String username, String password)
-   :outertype: EnvelopQuerySender
-
-   Explicit Constructor. Create an instance of \ ``EnvelopQuerySender``\
-
-   :param logger: The logger for log the sending process.
-   :param d: The data used for generate Envelop query request. It must be a kind of Admin data.
-   :param username: The username for authentication
-   :param password: The password for authentication
-
 Methods
 -------
 getEnvelopStream
@@ -163,7 +138,7 @@ getMessageIdToDownload
 onCreateRequest
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected HttpRequestBase onCreateRequest() throws Exception
+.. java:method:: protected HttpMethod onCreateRequest() throws Exception
    :outertype: EnvelopQuerySender
 
    [@EVENT] This method is invoked when the sender is required to create a HTTP Request from configuration.  It generates a form-url-encoded content embedded in the HTTP POST request. It contains two parameters, message_id and message_box. The value of these parameters are extracted from \ :java:ref:`getMessageIdToDownload()`\  and \ :java:ref:`getMessageBoxToDownload()`\  respectively.  \ **NOTE**\ : The values of message_box parameter may differ to what you see because it may transform \ :java:ref:`getMessageBoxMapping()`\ .

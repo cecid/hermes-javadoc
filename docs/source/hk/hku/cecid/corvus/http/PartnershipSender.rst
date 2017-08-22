@@ -10,13 +10,21 @@
 
 .. java:import:: java.util Iterator
 
-.. java:import:: org.apache.http.client.methods HttpRequestBase
+.. java:import:: org.apache.commons.httpclient HttpMethod
 
-.. java:import:: org.apache.http.client.methods HttpPost
+.. java:import:: org.apache.commons.httpclient.methods PostMethod
 
-.. java:import:: org.apache.http.client.methods CloseableHttpResponse
+.. java:import:: org.apache.commons.httpclient.methods.multipart ByteArrayPartSource
 
-.. java:import:: org.apache.http.entity.mime MultipartEntityBuilder
+.. java:import:: org.apache.commons.httpclient.methods.multipart FilePart
+
+.. java:import:: org.apache.commons.httpclient.methods.multipart MultipartRequestEntity
+
+.. java:import:: org.apache.commons.httpclient.methods.multipart Part
+
+.. java:import:: org.apache.commons.httpclient.methods.multipart PartSource
+
+.. java:import:: org.apache.commons.httpclient.methods.multipart StringPart
 
 .. java:import:: hk.hku.cecid.corvus.util FileLogger
 
@@ -46,19 +54,6 @@ PartnershipSender
 
    :param logger: The logger for log the sending process.
    :param d: The data used for generate HTTP multi-part request. It must be a kind of partnership data.
-
-PartnershipSender
-^^^^^^^^^^^^^^^^^
-
-.. java:constructor:: protected PartnershipSender(FileLogger logger, KVPairData d, String username, String password)
-   :outertype: PartnershipSender
-
-   Explicit Constructor. Create an instance of \ ``PartnershipSender``\
-
-   :param logger: The logger for log the sending process.
-   :param d: The data used for generate HTTP multi-part request. It must be a kind of partnership data.
-   :param username: The username for authentication
-   :param password: The password for authentication
 
 Methods
 -------
@@ -109,7 +104,7 @@ getStatus
 onCreateRequest
 ^^^^^^^^^^^^^^^
 
-.. java:method:: protected HttpRequestBase onCreateRequest() throws Exception
+.. java:method:: protected HttpMethod onCreateRequest() throws Exception
    :outertype: PartnershipSender
 
    [@EVENT] This method is invoked when the sender is required to create a HTTP Request from configuration.  It generates a multi-part content embedded in the HTTP POST request. The multi-part content contains all partnership data with the parameter name retrieved from the partnership mapping. \ :java:ref:`getPartnershipMapping()`\ . Also the type of partnership operation is appended at the end of multi-part with parameter name equal to 'request_action' and it's value is extracted thru \ :java:ref:`getPartnershipOperationMapping()`\ .

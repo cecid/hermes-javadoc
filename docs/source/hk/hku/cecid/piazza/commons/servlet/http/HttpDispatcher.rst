@@ -4,9 +4,19 @@
 
 .. java:import:: java.io IOException
 
+.. java:import:: java.lang.reflect Method
+
 .. java:import:: java.net HttpURLConnection
 
+.. java:import:: java.sql Driver
+
+.. java:import:: java.sql DriverManager
+
+.. java:import:: java.sql SQLException
+
 .. java:import:: java.util Date
+
+.. java:import:: java.util Enumeration
 
 .. java:import:: java.util Iterator
 

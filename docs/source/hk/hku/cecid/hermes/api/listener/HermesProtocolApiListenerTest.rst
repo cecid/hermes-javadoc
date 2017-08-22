@@ -1,4 +1,4 @@
-.. java:import:: java.util ArrayList
+.. java:import:: java.util List
 
 .. java:import:: org.junit Assert
 

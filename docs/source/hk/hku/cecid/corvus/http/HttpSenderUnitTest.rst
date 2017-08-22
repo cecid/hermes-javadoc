@@ -10,10 +10,6 @@
 
 .. java:import:: java.util Iterator
 
-.. java:import:: java.util List
-
-.. java:import:: java.util ArrayList
-
 .. java:import:: junit.framework TestCase
 
 .. java:import:: sun.misc BASE64Encoder
@@ -22,17 +18,15 @@
 
 .. java:import:: org.slf4j Logger
 
-.. java:import:: org.apache.http.client.methods HttpPost
+.. java:import:: org.apache.commons.httpclient HttpMethod
 
-.. java:import:: org.apache.http.client.methods HttpRequestBase
+.. java:import:: org.apache.commons.httpclient.methods PostMethod
 
-.. java:import:: org.apache.http NameValuePair
+.. java:import:: org.apache.commons.httpclient.methods.multipart Part
 
-.. java:import:: org.apache.http.message BasicNameValuePair
+.. java:import:: org.apache.commons.httpclient.methods.multipart StringPart
 
-.. java:import:: org.apache.http.client.entity UrlEncodedFormEntity
-
-.. java:import:: org.apache.http.entity.mime MultipartEntityBuilder
+.. java:import:: org.apache.commons.httpclient.methods.multipart MultipartRequestEntity
 
 .. java:import:: hk.hku.cecid.piazza.commons.io IOHandler
 

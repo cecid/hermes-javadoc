@@ -8,6 +8,8 @@
 
 .. java:import:: org.w3c.dom Attr
 
+.. java:import:: org.apache.log4j Logger
+
 AttachmentResolver
 ==================
 
@@ -19,6 +21,14 @@ AttachmentResolver
    A \ ``ResourceResolver``\  implementation used by Apache Security library. The URI in the \ ``Reference``\  element of a digital signature points to some internal or external resources. This \ ``AttachmentResolver``\  is used to provide the resources in the \ ``EbxmlMessage``\  payload attachments and also the \ ``SOAPPart``\  itself with Reference URI="".
 
    :author: cyng
+
+Fields
+------
+logger
+^^^^^^
+
+.. java:field:: protected static Logger logger
+   :outertype: AttachmentResolver
 
 Constructors
 ------------
